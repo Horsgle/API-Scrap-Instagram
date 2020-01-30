@@ -1,0 +1,26 @@
+{
+  "name": "horsgle-scrap-instagram",
+  "version": "1.0.0",
+  "description": "Serviço de scrap da empresa Horsgle",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wfsimao/Horsgle-Backup.git"
+  },
+  "author": "William Simao <wfsimao@gmail.com> (https://wfsimao.github.io/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wfsimao/Horsgle-Backup/issues"
+  },
+  "homepage": "https://github.com/wfsimao/Horsgle-Backup#readme",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "instagram-scraper": "^1.0.6",
+    "mongodb-backup": "^1.6.9"
+  }
+}
