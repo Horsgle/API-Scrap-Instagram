@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require('body-parser');
 const instagramScraper = require('instagram-scraper')
-const backup = require('mongodb-backup');
 const router = express.Router();
 module.exports = router;
 
@@ -41,6 +40,7 @@ router.get('/:usuario', async function(req, res){
         itemLista.likes = userData.graphql.user.edge_owner_to_timeline_media.edges[i].node.edge_liked_by;
         itemLista.thumbnail = userData.graphql.user.edge_owner_to_timeline_media.edges[i].node.thumbnail_src;
         itemLista.shortcode = userData.graphql.user.edge_owner_to_timeline_media.edges[i].node.shortcode;
+        itemLista.text = userData.graphql.user.edge_owner_to_timeline_media.edges[i].node.edge_media_to_caption.edges[0].node.text;
         itemLista.linkPost = `https://www.instagram.com/p/${itemLista.shortcode}`;
         lista.push(itemLista);
       }
