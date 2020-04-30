@@ -26,5 +26,5 @@ app.all('*', function(req, res, next) {
 });
 
 app.get(`${config.BASE_SERVER}/status`, function(req, res, next){
-  res.json({modulo:'usuario', statusCode:200, servidor:"Online"});
+  res.json({modulo:'Scrap', statusCode:200, servidor:"Online"});
 });

@@ -10,7 +10,7 @@ router.use(bodyParser.urlencoded({extended:true}));
 router.all('*', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Role');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
@@ -47,8 +47,7 @@ router.get('/:usuario', async function(req, res){
       json.publicacoes.lista = lista;
       res.json(json);
     });
-  
-  })
+})
 
 
 router.get('/status', function(req, res){
