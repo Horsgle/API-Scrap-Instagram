@@ -20,6 +20,7 @@ router.get('/:usuario', async function(req, res){
       
     try {
       let userData = (await axios.get(`https://www.instagram.com/${req.params.usuario}/?__a=1`)).data
+      console.log(userData)
       let json = {};
       json.id = userData.graphql.user.id;
       json.full_name = userData.graphql.user.full_name;
