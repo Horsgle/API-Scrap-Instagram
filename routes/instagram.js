@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require('body-parser');
-const instagramScraper = require('instagram-scraping')
+const axios = require('axios')
 const router = express.Router();
 module.exports = router;
 
@@ -19,8 +19,7 @@ router.get('/:usuario', async function(req, res){
       res.json({status: 'error'});
       console.log(req.params.usuario)
       try {
-        let userData = await instagramScraper.scrapeUserPage(req.params.usuario)
-        console.log(userData)
+        let userData = (await axios.get(`https://www.instagram.com/${req.params.usuario}/?__a=1`)).data
         let json = {};
         json.id = userData.graphql.user.id;
         json.full_name = userData.graphql.user.full_name;
