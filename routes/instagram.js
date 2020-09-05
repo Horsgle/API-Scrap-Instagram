@@ -16,8 +16,6 @@ router.all('*', function(req, res, next) {
 
 router.get('/:usuario', async function(req, res){
     if(!req.params.usuario)
-      res.json({status: 'error'});
-      console.log(req.params.usuario)
       try {
         let userData = (await axios.get(`https://www.instagram.com/${req.params.usuario}/?__a=1`)).data
         let json = {};
