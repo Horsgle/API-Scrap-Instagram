@@ -50,7 +50,7 @@ router.get('/:usuario', async function(req, res){
         json.publicacoes.lista = lista;
         res.json(json);
       } catch (error) {
-        res.status(400)
+        res.json({status:"error"})
         console.log(error)
       }
 })
