@@ -18,6 +18,7 @@ router.get('/:usuario', async function(req, res){
     if(!req.params.usuario)
       res.json({status: 'error'});
     instagramScraper.getUserData(req.params.usuario).then(userData => {
+      console.log(userData.graphql)
       let json = {};
       json.id = userData.graphql.user.id;
       json.full_name = userData.graphql.user.full_name;
