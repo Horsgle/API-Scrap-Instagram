@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require('body-parser');
-const instagramScraper = require('instagram-scraper')
+const instagramScraper = require('instagram-scraping')
 const router = express.Router();
 module.exports = router;
 
@@ -18,7 +18,7 @@ router.get('/:usuario', async function(req, res){
     if(!req.params.usuario)
       res.json({status: 'error'});
       console.log(req.params.usuario)
-    instagramScraper.getUserData(req.params.usuario).then(userData => {
+    instagramScraper.scrapeUserPage(req.params.usuario).then(userData => {
       console.log(userData)
       let json = {};
       json.id = userData.graphql.user.id;
